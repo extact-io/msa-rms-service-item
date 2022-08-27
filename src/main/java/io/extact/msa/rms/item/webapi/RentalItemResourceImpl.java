@@ -2,10 +2,10 @@ package io.extact.msa.rms.item.webapi;
 
 import java.util.List;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.validation.Valid;
-import javax.ws.rs.Path;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.validation.Valid;
+import jakarta.ws.rs.Path;
 
 import io.extact.msa.rms.item.service.RentalItemService;
 import io.extact.msa.rms.item.webapi.dto.AddRentalItemEventDto;

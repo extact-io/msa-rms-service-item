@@ -2,9 +2,9 @@ package io.extact.msa.rms.item.persistence.file;
 
 import java.io.IOException;
 
-import javax.enterprise.context.Dependent;
-import javax.enterprise.inject.Produces;
-import javax.inject.Inject;
+import jakarta.enterprise.context.Dependent;
+import jakarta.enterprise.inject.Produces;
+import jakarta.inject.Inject;
 
 import io.extact.msa.rms.item.domain.RentalItem;
 import io.extact.msa.rms.platform.fw.persistence.file.io.FileAccessor;

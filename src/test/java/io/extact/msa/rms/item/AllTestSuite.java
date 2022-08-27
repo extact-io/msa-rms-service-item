@@ -6,8 +6,6 @@ import org.junit.runner.RunWith;
 
 @SuppressWarnings("deprecation")
 @RunWith(JUnitPlatform.class)
-@SelectPackages({
-    "io.extact.msa.rms.item"
-    })
+@SelectPackages("io.extact.msa.rms.item")
 public class AllTestSuite {
 }
