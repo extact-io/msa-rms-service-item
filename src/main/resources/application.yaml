@@ -40,14 +40,6 @@ javax.sql.DataSource:
 #----------------------------------
 # rmsApplications Configurations
 #----------------------------------
-main.manifest.jar: msa-rms-service-item\.jar$
-
-healthCheck:
-  otherChecks:
-    - io.extact.msa.rms.platform.core.health.DbReadnessCheck
-  dbReadnessCheck.pingSql: "SELECT 1"
-
-
 persistence:
   apiType: jpa
 
@@ -61,6 +53,13 @@ csv:
   temporary:
     fileName:
       rentalitem: temporary/rentalItemTemp.csv
+
+main.manifest.jar: msa-rms-service-item\.jar$
+
+healthCheck:
+  otherChecks:
+    - io.extact.msa.rms.platform.core.health.DbReadnessCheck
+  dbReadnessCheck.pingSql: "SELECT 1"
 
 # Set when you want to filter the output.
 # Output the entire amount even if there is no configdump setting itself.
