@@ -61,6 +61,9 @@ healthCheck:
     - io.extact.msa.rms.platform.core.health.DbReadnessCheck
   dbReadnessCheck.pingSql: "SELECT 1"
 
+openapi.info:
+  title: レンタル品サービス公開API
+
 # Set when you want to filter the output.
 # Output the entire amount even if there is no configdump setting itself.
 configdump:
