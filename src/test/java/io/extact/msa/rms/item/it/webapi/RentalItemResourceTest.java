@@ -23,10 +23,13 @@ import io.extact.msa.rms.platform.core.jaxrs.converter.RmsTypeParameterFeature;
 import io.extact.msa.rms.platform.fw.exception.BusinessFlowException;
 import io.extact.msa.rms.platform.fw.exception.BusinessFlowException.CauseType;
 import io.extact.msa.rms.test.junit5.JulToSLF4DelegateExtension;
+import io.extact.msa.rms.test.utils.ClearOpenTelemetryContextCdiExtension;
 import io.helidon.microprofile.tests.junit5.AddConfig;
+import io.helidon.microprofile.tests.junit5.AddExtension;
 import io.helidon.microprofile.tests.junit5.HelidonTest;
 
 @HelidonTest
+@AddExtension(ClearOpenTelemetryContextCdiExtension.class)
 @AddConfig(key = "server.port", value = "7001")
 @ExtendWith(JulToSLF4DelegateExtension.class)
 @TestMethodOrder(OrderAnnotation.class)
