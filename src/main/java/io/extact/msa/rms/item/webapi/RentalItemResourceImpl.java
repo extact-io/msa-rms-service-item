@@ -12,7 +12,7 @@ import io.extact.msa.rms.item.webapi.dto.AddRentalItemEventDto;
 import io.extact.msa.rms.item.webapi.dto.RentalItemResourceDto;
 import io.extact.msa.rms.platform.core.validate.ValidateParam;
 
-@Path("/items")
+@Path("items")
 @ApplicationScoped
 @ValidateParam
 public class RentalItemResourceImpl implements RentalItemResource {

@@ -31,6 +31,7 @@ public interface RentalItemResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    //--- for OpenAPI
     @Operation(operationId = "getAll", summary = "レンタル品の全件を取得する", description = "登録されているすべてのレンタル品を取得する")
     @SecurityRequirements({@SecurityRequirement(name = "RmsHeaderAuthn"), @SecurityRequirement(name = "RmsHeaderAuthz")})
     @APIResponse(responseCode = "200", description = "検索結果", content = @Content(mediaType = "application/json", schema = @Schema(type = SchemaType.ARRAY, implementation = RentalItemResourceDto.class)))
@@ -39,6 +40,7 @@ public interface RentalItemResource {
     @GET
     @Path("/{itemId}")
     @Produces(MediaType.APPLICATION_JSON)
+    //--- for OpenAPI
     @Operation(operationId = "get", summary = "レンタル品を取得する", description = "指定されたレンタル品を取得する。なお、該当なしはnullに相当する204(NoContent)を返す")
     @SecurityRequirements({@SecurityRequirement(name = "RmsHeaderAuthn"), @SecurityRequirement(name = "RmsHeaderAuthz")})
     @Parameter(name = "itemId", description = "レンタル品ID", in = ParameterIn.PATH, required = true)
@@ -51,6 +53,7 @@ public interface RentalItemResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
+    //--- for OpenAPI
     @Operation(operationId = "add", summary = "レンタル品を登録する", description = "シリアル番号が既に使われている場合は409を返す")
     @SecurityRequirements({@SecurityRequirement(name = "RmsHeaderAuthn"), @SecurityRequirement(name = "RmsHeaderAuthz")})
     @Parameter(name = "dto", description = "登録内容", required = true, content = @Content(mediaType = "application/json", schema = @Schema(implementation = AddRentalItemEventDto.class)))
@@ -63,6 +66,7 @@ public interface RentalItemResource {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
+    //--- for OpenAPI
     @Operation(operationId = "update", summary = "レンタル品を更新する", description = "依頼されたレンタル品を更新する")
     @SecurityRequirements({@SecurityRequirement(name = "RmsHeaderAuthn"), @SecurityRequirement(name = "RmsHeaderAuthz")})
     @Parameter(name = "updateDto", description = "更新内容", required = true, content = @Content(mediaType = "application/json", schema = @Schema(implementation = RentalItemResourceDto.class)))
@@ -74,6 +78,7 @@ public interface RentalItemResource {
 
     @DELETE
     @Path("/{itemId}")
+    //--- for OpenAPI
     @Operation(operationId = "delete", summary = "レンタル品を削除する", description = "削除対象のレンタル品を参照する予約が存在する場合は削除は行わずエラーにする")
     @SecurityRequirements({@SecurityRequirement(name = "RmsHeaderAuthn"), @SecurityRequirement(name = "RmsHeaderAuthz")})
     @Parameter(name = "itemId", description = "レンタル品ID", in = ParameterIn.PATH, required = true)
@@ -87,6 +92,7 @@ public interface RentalItemResource {
     @GET
     @Path("/exists/{itemId}")
     @Produces(MediaType.APPLICATION_JSON)
+    //--- for OpenAPI
     @Operation(operationId = "exists", summary = "指定されたレンタル品が存在するかを返す")
     @SecurityRequirements({@SecurityRequirement(name = "RmsHeaderAuthn"), @SecurityRequirement(name = "RmsHeaderAuthz")})
     @Parameter(name = "itemId", description = "レンタル品ID", in = ParameterIn.PATH, required = true)

@@ -41,7 +41,7 @@ class RentalItemResourceTest {
     @BeforeEach
     void setup() throws Exception {
         this.itemResource = RestClientBuilder.newBuilder()
-                .baseUri(new URI("http://localhost:7001/items"))
+                .baseUri(new URI("http://localhost:7001/api/items"))
                 .register(RmsTypeParameterFeature.class)
                 .build(RentalItemResource.class);
     }
