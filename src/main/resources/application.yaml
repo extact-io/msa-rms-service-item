@@ -37,6 +37,10 @@ javax.sql.DataSource:
       user: ${rms.h2.user}
       password: ${rms.h2.password}
 
+mp:
+  openapi:
+    model.reader: io.extact.msa.rms.platform.fw.webapi.openapi.HeaderAuthDecoratedModelReader
+
 #----------------------------------
 # rmsApplications Configurations
 #----------------------------------
