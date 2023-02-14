@@ -10,4 +10,3 @@ COPY ./target/libs ./libs
 CMD ["java", "-jar", "msa-rms-service-item.jar"]
 
 EXPOSE 7002
-#EXPOSE 7011
