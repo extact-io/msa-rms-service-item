@@ -10,7 +10,7 @@
 	<packaging>jar</packaging>
 	<name>msa-rms-service-item</name>
 	<description>rms item service module</description>
-	
+
 	<repositories>
 		<repository>
 			<id>github</id>
@@ -27,7 +27,7 @@
 
 	<properties>
 		<mainClass>io.extact.msa.rms.item.webapi.RentalItemWebApiMain</mainClass>
-		<docker.image.name>msa-service-item</docker.image.name>
+		<image.name>msa-service-item</image.name>
 	</properties>
 
 	<dependencies>
