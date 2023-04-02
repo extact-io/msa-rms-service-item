@@ -24,6 +24,6 @@ jobs:
       deploy-type: ecs
       ecs-taskname: item-service-task
       ecs-containername: item-service-container
-      image-name: msa-service-item
+      image-name: extact-io/msa-service-item
       ecs-servicename: item-service
     secrets: inherit
