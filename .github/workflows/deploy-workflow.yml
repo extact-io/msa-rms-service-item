@@ -3,7 +3,6 @@ name: deploy-workflow
 
 on:
   workflow_dispatch:
-    branches: [ main ]
 
 jobs:
   execute:
@@ -11,4 +10,8 @@ jobs:
     with:
       repo: ${{ github.repository }}
       with_image: true
+      deploy_type: ecs
+      ecs_taskname: item-service-task
+      ecs_containername: item-service-container
+      ecs_servicename: item-service
     secrets: inherit
