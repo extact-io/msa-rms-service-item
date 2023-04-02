@@ -8,6 +8,11 @@ on:
         required: true
         type: boolean
         default: false
+  workflow_call:
+    inputs:
+      skip-test:
+        required: true
+        type: boolean
 
 jobs:
   execute:
@@ -19,5 +24,6 @@ jobs:
       deploy-type: ecs
       ecs-taskname: item-service-task
       ecs-containername: item-service-container
+      image-name: msa-service-item
       ecs-servicename: item-service
     secrets: inherit
