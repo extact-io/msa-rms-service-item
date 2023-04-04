@@ -1,4 +1,3 @@
-# Workflow - build, publish jar and image to GitHub Packages for this repository(msa-rms-service-item)
 name: deploy-workflow
 
 on:
