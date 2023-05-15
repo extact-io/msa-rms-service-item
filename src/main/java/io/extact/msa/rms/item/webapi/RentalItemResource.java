@@ -35,6 +35,8 @@ public interface RentalItemResource {
     @Operation(operationId = "getAll", summary = "レンタル品の全件を取得する", description = "登録されているすべてのレンタル品を取得する")
     @SecurityRequirements({@SecurityRequirement(name = "RmsHeaderAuthn"), @SecurityRequirement(name = "RmsHeaderAuthz")})
     @APIResponse(responseCode = "200", description = "検索結果", content = @Content(mediaType = "application/json", schema = @Schema(type = SchemaType.ARRAY, implementation = RentalItemResourceDto.class)))
+    @APIResponse(responseCode = "500", ref = "#/components/responses/ServerError")
+    @APIResponse(responseCode = "503", ref = "#/components/responses/ServiceUnavailable")
     List<RentalItemResourceDto> getAll();
 
     @GET
@@ -48,6 +50,7 @@ public interface RentalItemResource {
     @APIResponse(responseCode = "204", ref = "#/components/responses/NoContent")
     @APIResponse(responseCode = "400", ref = "#/components/responses/ParameterError")
     @APIResponse(responseCode = "500", ref = "#/components/responses/ServerError")
+    @APIResponse(responseCode = "503", ref = "#/components/responses/ServiceUnavailable")
     RentalItemResourceDto get(@RmsId @PathParam("itemId") Integer itemId);
 
     @POST
@@ -74,6 +77,7 @@ public interface RentalItemResource {
     @APIResponse(responseCode = "400", ref = "#/components/responses/ParameterError")
     @APIResponse(responseCode = "404", ref = "#/components/responses/UnknownData")
     @APIResponse(responseCode = "500", ref = "#/components/responses/ServerError")
+    @APIResponse(responseCode = "503", ref = "#/components/responses/ServiceUnavailable")
     RentalItemResourceDto update(@Valid RentalItemResourceDto dto);
 
     @DELETE
@@ -87,6 +91,7 @@ public interface RentalItemResource {
     @APIResponse(responseCode = "404", ref = "#/components/responses/UnknownData")
     @APIResponse(responseCode = "409", ref = "#/components/responses/DataRefered")
     @APIResponse(responseCode = "500", ref = "#/components/responses/ServerError")
+    @APIResponse(responseCode = "503", ref = "#/components/responses/ServiceUnavailable")
     void delete(@RmsId @PathParam("itemId") Integer itemId);
 
     @GET
@@ -99,5 +104,6 @@ public interface RentalItemResource {
     @APIResponse(responseCode = "200", description = "ある場合はtrueを返す", content = @Content(mediaType = "application/json", schema = @Schema(type = SchemaType.BOOLEAN, implementation = Boolean.class)))
     @APIResponse(responseCode = "400", ref = "#/components/responses/ParameterError")
     @APIResponse(responseCode = "500", ref = "#/components/responses/ServerError")
+    @APIResponse(responseCode = "503", ref = "#/components/responses/ServiceUnavailable")
     boolean exists(@RmsId @PathParam("itemId") Integer itemId);
 }
