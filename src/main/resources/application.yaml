@@ -35,6 +35,8 @@ javax.sql.DataSource:
 # Applications Configurations
 #----------------------------------
 rms:
+  app:
+    name: ItemService
   persistence:
     apiType: jpa
     csv:
